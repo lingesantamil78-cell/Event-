@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#541e2b">
+<title>Crave Hub | Every Bite Hits Different</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast" role="status"></div>
+<section id="authScreen" class="auth-screen">
+  <div class="auth-visual gold-visual">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M34.8 13.1A17 17 0 1 0 38 31.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M14.5 25.5l6.2 6.1 13-15.1" fill="none" stroke="#E8D4A6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11c-1.7-2.5-.8-4.7 1.6-6.6M27 10c-.9-2.3-.1-4.2 1.8-5.7" fill="none" stroke="#E8D4A6" stroke-width="2" stroke-linecap="round"/></svg></span> CRAVE<span class="brand-light">HUB</span></div>
+    <p class="hero-tagline">Every Bite Hits Different.</p>
+    <div class="portrait-stage" aria-label="Crave Hub portrait visual"><div class="portrait-aura"></div><img class="brand-portrait" src="assets/thamizh-portrait.png" alt="Portrait" /><span class="portrait-orbit orbit-one"></span><span class="portrait-orbit orbit-two"></span><span class="gold-spark spark-one">✦</span><span class="gold-spark spark-two">✧</span><span class="gold-spark spark-three">✦</span></div>
+    <div class="auth-bottom"><div class="creator-signature"><img class="creator-mini-photo" src="assets/thamizh-portrait.png" alt="Thamizh portrait"><span class="creator-credit">CREATED BY THAMIZH</span></div></div>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-form">
+      <span class="eyebrow">WELCOME TO CRAVE HUB</span><h2>Sign in <em>to savour.</em></h2>
+      <p class="muted">Enter your details to unlock the menu and discover your cravings.</p>
+      <button type="button" id="openSpinWheel" class="spin-launch"><span class="spin-launch-icon">✦</span><span><strong>Spin &amp; Win</strong><small>Try your luck for a tasty treat</small></span><span class="spin-launch-arrow">↗</span></button>
+      <form id="profileForm">
+        <label for="fullName">Your name</label><input id="fullName" placeholder="Your name" minlength="2" required>
+        <label for="mobile">Mobile number</label><input id="mobile" type="tel" inputmode="numeric" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+        <label for="location">Delivery location</label><div class="location-row"><input id="location" placeholder="Area / street / landmark" required><button type="button" id="useLocation" class="location-btn" title="Use device location">⌖</button></div>
+        <button class="btn btn-primary btn-wide" type="submit">Sign in & explore <span>↗</span></button>
+      </form>
+      <p class="tiny-note">Demo project • No real payment or order is placed.</p>
+    </div>
+  </div>
+</section>
+
+<div id="app" class="hidden">
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Crave Hub home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M34.8 13.1A17 17 0 1 0 38 31.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M14.5 25.5l6.2 6.1 13-15.1" fill="none" stroke="#E8D4A6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11c-1.7-2.5-.8-4.7 1.6-6.6M27 10c-.9-2.3-.1-4.2 1.8-5.7" fill="none" stroke="#E8D4A6" stroke-width="2" stroke-linecap="round"/></svg></span> CRAVE<span class="brand-light">HUB</span></a>
+  <div class="delivery-pill"><span class="live-dot"></span><div><small>DELIVERING TO</small><strong id="topLocation">Your location</strong></div><button id="editLocation" aria-label="Edit location">⌄</button></div>
+  <button id="profileButton" class="profile-button"><span id="avatar">A</span><span id="topName">Guest</span></button>
+</header>
+<main class="main-wrap">
+  <section class="welcome-row"><div><span class="eyebrow">YOUR TABLE IS WAITING</span><h1>What are you <em>craving?</em></h1><p>Discover something delicious today.</p></div><div class="welcome-art"><span>✦</span><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=400&q=85" alt="Fresh food bowl"></div></section>
+  <section class="search-panel"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Search pizza, biryani, ice cream, KFC-style chicken..."><button id="clearSearch" aria-label="Clear search">×</button><span class="search-hint">⌘ K</span></section>
+  <section class="category-row" id="categoryRow">
+    <button class="category-chip active" data-category="All"><span>✦</span> All food</button>
+    <button class="category-chip" data-category="Pizza"><span>🍕</span> Pizza</button>
+    <button class="category-chip" data-category="Burgers"><span>🍔</span> Burgers</button>
+    <button class="category-chip" data-category="Indian"><span>🍛</span> Indian</button>
+    <button class="category-chip" data-category="Chicken"><span>🍗</span> Chicken</button>
+    <button class="category-chip" data-category="Desserts"><span>🍨</span> Desserts</button>
+    <button class="category-chip" data-category="Drinks"><span>🥤</span> Drinks</button>
+  </section>
+  <section class="offer-banner"><div class="offer-copy"><span class="eyebrow">CRAVE HUB SPECIAL</span><h2>A little extra<br>in every bite.</h2><p>Use <strong>CRAVE50</strong> for ₹50 off orders above ₹399.</p><button id="useOffer" class="btn btn-light">Claim offer <span>↗</span></button></div><div class="offer-image"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=90" alt="Crispy fried chicken"></div><span class="offer-stamp">TASTY<br>DEAL</span></section>
+  <div class="section-heading"><div><span class="eyebrow">PICKED FOR YOU</span><h2 id="menuTitle">Popular right now</h2></div><span id="resultCount" class="result-count"></span></div>
+  <section id="foodGrid" class="food-grid"></section>
+  <section id="emptyState" class="empty-state hidden"><div>⌕</div><h3>No bites found</h3><p>Try pizza, biryani, chicken, ice cream or another keyword.</p><button id="resetSearch" class="btn btn-outline">Show all food</button></section>
+  <section class="bottom-promo"><div><span class="eyebrow">GOOD FOOD, GOOD MOOD</span><h2>Make room for<br><em>one more bite.</em></h2><p>New cravings are added to the menu all the time.</p></div><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=85" alt="Colourful meal"></section>
+</main>
+<button id="cartFloat" class="cart-float"><span>▣</span><span>View your bag</span><b id="cartCount">0</b><strong id="cartTotal">₹0</strong></button>
+</div>
+
+<div id="cartDrawer" class="drawer-backdrop hidden"><aside class="drawer"><div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button id="closeCart" class="icon-btn">×</button></div><div id="cartItems" class="cart-items"></div><div id="cartEmpty" class="cart-empty"><div>🛍️</div><h3>Your bag is waiting</h3><p>Add a delicious bite to get started.</p></div><div class="coupon-row"><input id="couponInput" placeholder="Promo code"><button id="applyCoupon" class="btn btn-dark">Apply</button></div><div class="bill"><div><span>Item total</span><strong id="itemSubtotal">₹0</strong></div><div><span>Delivery</span><strong id="deliveryFee">₹25</strong></div><div><span>Offer discount</span><strong id="discount">−₹0</strong></div><div class="bill-total"><span>Total</span><strong id="grandTotal">₹25</strong></div></div><button id="checkoutButton" class="btn btn-primary btn-wide">Continue to checkout <span>↗</span></button></aside></div>
+
+<div id="checkoutModal" class="modal-backdrop hidden"><section class="modal"><button class="modal-close" data-close="checkoutModal">×</button><span class="eyebrow">ALMOST THERE</span><h2>Checkout <em>details</em></h2><p class="muted">Confirm your delivery details.</p><form id="checkoutForm"><label for="checkoutAddress">Full delivery address</label><textarea id="checkoutAddress" rows="2" required placeholder="House no, street, area, landmark"></textarea><label for="checkoutMobile">Contact number</label><input id="checkoutMobile" inputmode="numeric" pattern="[0-9]{10}" required><div class="payment-options"><label class="payment-choice"><input type="radio" name="payment" value="COD" checked><span>💵</span><div><strong>Cash on delivery</strong><small>Pay when your order arrives</small></div></label><label class="payment-choice"><input type="radio" name="payment" value="UPI"><span>▦</span><div><strong>UPI / Scan to pay (demo)</strong><small>Simulated QR screen only</small></div></label></div><label class="tip-choice"><input id="addTip" type="checkbox"> Add a ₹20 delivery tip <span>Optional</span></label><div class="checkout-total"><span>Payable amount</span><strong id="checkoutTotal">₹0</strong></div><button class="btn btn-primary btn-wide" type="submit">Place demo order <span>↗</span></button></form></section></div>
+
+<div id="upiModal" class="modal-backdrop hidden"><section class="modal upi-modal"><button class="modal-close" data-close="upiModal">×</button><span class="eyebrow">DEMO PAYMENT</span><h2>Scan & pay</h2><div class="fake-qr" aria-label="Decorative demo QR code"><span></span><span></span><span></span><span></span><b>F</b></div><p>This is a sample screen, not a real payment QR. No money will be collected.</p><button id="confirmDemoPayment" class="btn btn-primary btn-wide">Continue with demo order</button></section></div>
+
+<div id="trackingModal" class="modal-backdrop hidden"><section class="modal tracking-modal"><button class="modal-close" data-close="trackingModal">×</button><span class="eyebrow">ORDER PLACED SUCCESSFULLY</span><h2>Thanks for ordering <em>with us!</em></h2><p class="order-thanks">Your craving is in good hands. We hope every bite makes you smile.</p><div class="order-meta"><div><small>ORDER ID</small><strong id="orderId">CH-0000</strong></div><div><small>ESTIMATED ARRIVAL</small><strong id="eta">25–35 min</strong></div></div><div class="track-route"><div class="route-line"><span id="routeProgress"></span></div><div id="trackingSteps" class="tracking-steps"></div></div><div class="tracking-address"><span>⌖</span><div><small>DELIVERING TO</small><strong id="trackingAddress">Your address</strong></div></div><p class="tracking-note" id="trackingNote">Your order has been received.</p><button id="closeTracking" class="btn btn-dark btn-wide">Continue ordering</button><p class="tiny-note">Demo tracking automatically updates every few seconds. It is not connected to a real delivery partner.</p></section></div>
+
+<div id="spinModal" class="modal-backdrop hidden"><section class="modal spin-modal" role="dialog" aria-modal="true" aria-labelledby="spinTitle"><button class="modal-close" data-close="spinModal" aria-label="Close spin wheel">×</button><span class="eyebrow">A LITTLE SURPRISE</span><h2 id="spinTitle">Spin &amp; <em>Win.</em></h2><p class="muted">One spin, one tasty surprise. Demo rewards only.</p><div class="wheel-wrap"><span class="wheel-pointer" aria-hidden="true">▼</span><div id="spinWheel" class="spin-wheel"><span class="wheel-label wl1">₹50 OFF</span><span class="wheel-label wl2">FREE DELIVERY</span><span class="wheel-label wl3">10% OFF</span><span class="wheel-label wl4">BONUS COINS</span><span class="wheel-label wl5">₹25 OFF</span><span class="wheel-label wl6">TRY AGAIN</span><span class="wheel-label wl7">SWEET TREAT</span><span class="wheel-label wl8">5% OFF</span><div class="wheel-center">CH</div></div></div><button type="button" id="spinNow" class="btn btn-primary btn-wide spin-now">Spin now <span>↻</span></button><p id="spinResult" class="spin-result" aria-live="polite">Your surprise is waiting ✨</p></section></div>
+
+<script src="script.js"></script>
+</body></html>
